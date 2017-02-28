@@ -404,7 +404,7 @@ class DropoutReport(ExternalCourseReport):
         time_now = time.time()
         certificate_threshold = course_info['certificate_regular_threshold']
         begin_date = get_unix_date(course_info['begin_date']) if course_info['begin_date'] else 0
-        last_deadline = get_unix_date(course_info['last_deadline']) if course_info['begin_date'] else time_now
+        last_deadline = get_unix_date(course_info['last_deadline']) if course_info['last_deadline'] else time_now
 
         course_teachers = course_info['instructors']
         course_testers = fetch_objects_by_pk('groups', course_info["testers_group"], token=token)[0]['users']
